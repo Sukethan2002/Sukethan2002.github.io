@@ -1,0 +1,120 @@
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 40px 0 25px;
+
+  background: #080808;
+  border-top: 1px solid var(--border);
+}
+
+.footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  padding-bottom: 30px;
+}
+
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.footer-logo span {
+  color: var(--primary);
+}
+
+.footer-brand p {
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-socials a,
+.back-to-top {
+  display: grid;
+  place-items: center;
+
+  width: 43px;
+  height: 43px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  color: var(--text-secondary);
+
+  transition: 0.3s;
+}
+
+.footer-socials a:hover,
+.back-to-top:hover {
+  transform: translateY(-4px);
+  color: #60a5fa;
+  border-color: var(--primary);
+  box-shadow: 0 0 20px #2563eb20;
+}
+
+.back-to-top {
+  color: #60a5fa;
+}
+
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid var(--border);
+
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+
+  .footer-main {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-brand {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+    font-size: 11px;
+  }
+}

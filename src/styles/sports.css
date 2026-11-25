@@ -1,0 +1,211 @@
+
+/* =========================
+   SPORTS SECTION
+========================= */
+
+.sports-section {
+  padding: 90px 0 110px;
+  background: var(--background);
+}
+
+.sports-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+
+/* =========================
+   SPORTS GRID
+========================= */
+
+.sports-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.sports-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 30px 20px;
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      ellipse at top,
+      #2563eb10,
+      transparent 65%
+    ),
+    var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 20px;
+
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.sports-card:hover {
+  border-color: #3b82f680;
+  box-shadow: 0 0 30px #2563eb20;
+}
+
+
+/* =========================
+   SPORTS ICONS
+========================= */
+
+.sports-icon {
+  display: grid;
+  place-items: center;
+
+  width: 85px;
+  height: 85px;
+
+  margin-bottom: 25px;
+
+  background: #3b82f610;
+  border: 1px solid #3b82f630;
+  border-radius: 22px;
+
+  font-size: 42px;
+
+  transition: transform 0.4s;
+}
+
+.sports-card:hover .sports-icon {
+  transform: translateY(-7px)
+    rotate(-8deg)
+    scale(1.08);
+}
+
+
+/* =========================
+   SPORTS IMAGES
+========================= */
+
+.sports-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+
+  margin-bottom: 20px;
+}
+
+.sports-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.4s;
+}
+
+.sports-card:hover .sports-image img {
+  transform: scale(1.06);
+}
+
+
+/* =========================
+   SPORTS CONTENT
+========================= */
+
+.sports-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.sports-achievement {
+  font-size: 13px;
+  color: #93c5fd;
+  line-height: 1.7;
+}
+
+.sports-organization {
+  margin-top: 10px;
+
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.sports-quote {
+  max-width: 650px;
+  margin: 35px auto 0;
+
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.8;
+
+  color: var(--text-secondary);
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1000px) {
+
+  .sports-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+
+  .sports-section {
+    padding: 65px 0 75px;
+  }
+
+  .sports-grid {
+    gap: 12px;
+  }
+
+  .sports-card {
+    padding: 22px 12px;
+    min-height: 210px;
+  }
+
+  .sports-icon {
+    width: 65px;
+    height: 65px;
+
+    font-size: 32px;
+    border-radius: 15px;
+  }
+
+  .sports-card h3 {
+    font-size: 16px;
+  }
+
+  .sports-achievement {
+    font-size: 11px;
+  }
+
+  .sports-organization {
+    font-size: 11px;
+  }
+
+  .sports-quote {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .sports-grid {
+    grid-template-columns: 1fr;
+  }
+}

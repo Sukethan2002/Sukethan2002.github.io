@@ -7,7 +7,7 @@ import {
   GitBranch,
   BriefcaseBusiness,
   Mail,
-  Code2,
+  
   BrainCircuit,
   Terminal,
   Database,
@@ -154,8 +154,12 @@ export default function Hero() {
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
 
-          <div className="visual-core">
-            <Code2 size={85} strokeWidth={1.3} />
+          <div className="visual-core profile-core">
+            <img
+                src={personal.photo}
+                alt={personal.name}
+                className="hero-profile-photo"
+            />
           </div>
 
           <div className="floating-icon icon-one">

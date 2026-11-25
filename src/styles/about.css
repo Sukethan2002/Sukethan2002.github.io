@@ -1,0 +1,302 @@
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section {
+  position: relative;
+  padding: 110px 0;
+  background: var(--background);
+}
+
+/* Reusable section headings */
+
+.about-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-code);
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #60a5fa;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+}
+
+.section-title span {
+  color: var(--primary);
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+/* =========================
+   BENTO GRID
+========================= */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.bento-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 30px;
+  min-height: 220px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s,
+    background 0.3s;
+}
+
+.bento-card:hover {
+  border-color: #3b82f680;
+  box-shadow: 0 0 30px #2563eb15;
+  background-color: #141414;
+}
+
+.bento-icon {
+  display: grid;
+  place-items: center;
+
+  width: 52px;
+  height: 52px;
+
+  background: #3b82f610;
+  border: 1px solid #3b82f630;
+  border-radius: 14px;
+
+  color: #60a5fa;
+  margin-bottom: 22px;
+
+  transition:
+    transform 0.3s,
+    background 0.3s;
+}
+
+.bento-card:hover .bento-icon {
+  transform: translateY(-5px);
+  background: #3b82f625;
+}
+
+.bento-card h3 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.bento-card p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-secondary);
+}
+
+/* =========================
+   INTRODUCTION CARD
+========================= */
+
+.about-intro {
+  grid-column: span 2;
+  grid-row: span 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      ellipse at top right,
+      #2563eb20,
+      transparent 65%
+    ),
+    var(--surface);
+}
+
+.about-intro h3 {
+  font-size: 32px;
+}
+
+.about-intro p {
+  font-size: 16px;
+}
+
+.about-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.about-tags span {
+  padding: 7px 14px;
+  font-size: 12px;
+  color: #93c5fd;
+  background: #3b82f610;
+  border: 1px solid #3b82f630;
+  border-radius: 30px;
+}
+
+/* =========================
+   LOCATION CARD
+========================= */
+
+.location-flag {
+  display: inline-block;
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+/* =========================
+   OPPORTUNITY CARD
+========================= */
+
+.about-opportunity {
+  grid-column: span 4;
+  min-height: 130px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  background:
+    linear-gradient(
+      120deg,
+      #22c55e08,
+      transparent
+    ),
+    var(--surface);
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #4ade80;
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.availability-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4ade80;
+
+  animation: availability-pulse 2s infinite;
+}
+
+@keyframes availability-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 #4ade8050;
+  }
+
+  50% {
+    box-shadow: 0 0 0 7px #4ade8000;
+  }
+}
+
+.opportunity-link {
+  display: grid;
+  place-items: center;
+
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+
+  border: 1px solid #3b82f650;
+  border-radius: 50%;
+
+  color: #60a5fa;
+
+  transition: 0.3s;
+}
+
+.opportunity-link:hover {
+  background: var(--primary);
+  color: white;
+  transform: rotate(8deg);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1000px) {
+  .about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-intro {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .about-opportunity {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 75px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .about-intro,
+  .about-opportunity {
+    grid-column: span 1;
+  }
+
+  .bento-card {
+    padding: 24px;
+    min-height: auto;
+  }
+
+  .about-intro h3 {
+    font-size: 26px;
+  }
+
+  .about-intro p {
+    font-size: 14px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .about-opportunity p {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .availability-dot {
+    animation: none;
+  }
+}
